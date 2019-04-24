@@ -1,0 +1,27 @@
+using System;
+
+class taisformula {
+	public static double area(int a, int b, double c, double d) {
+		var e = (c + d) / 2 * (a - b);
+		return e / 1000;
+	}
+	
+	public static void Main() {
+		var n = int.Parse(Console.ReadLine());
+		var time = new int[n];
+		var valu_e = new double[n];
+		var result = 0.0;
+		var input0 = Console.ReadLine().Split();
+		time[0] = int.Parse(input0[0]);
+		valu_e[0] = double.Parse(input0[1]);
+		for (int i = 1; i < n; ++i) {
+			var input = Console.ReadLine().Split();
+			time[i] = int.Parse(input[0]);
+			valu_e[i] = double.Parse(input[1]);
+			result += area(time[i], time[i - 1], valu_e[i], valu_e[i - 1]);
+		}
+		Console.WriteLine(result);
+	}
+}
+
+	
