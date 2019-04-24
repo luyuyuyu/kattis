@@ -1,0 +1,25 @@
+using System;
+
+class parking {
+	public static void Main() {
+		var price = Console.ReadLine().Split();
+		var p1 = int.Parse(price[0]);
+		var p2 = 2 * int.Parse(price[1]);
+		var p3 = 3 * int.Parse(price[2]);
+		var timeline = new int[200];
+		for (int i = 0; i < 3; ++i) {
+			var input = Console.ReadLine().Split();
+			var start = int.Parse(input[0]);
+			var leave = int.Parse(input[1]);
+			for (int j = start; j < leave; ++j) timeline[j] += 1;
+		}
+		var result = 0;
+		foreach (int i in timeline) {
+			if (i == 3) result += p3;
+			if (i == 2) result += p2;
+			if (i == 1) result += p1;
+		}
+		Console.WriteLine(result);
+	}
+}
+	
