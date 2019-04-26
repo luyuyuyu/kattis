@@ -1,0 +1,14 @@
+using System;
+
+class different {
+	public static void Main() {
+		while (true) {
+			var inpu = Console.ReadLine();
+			if (inpu == null) break;
+			var input = inpu.Split();
+			var a = long.Parse(input[0]);
+			var b = long.Parse(input[1]);
+			Console.WriteLine(Math.Abs(a - b));
+		}
+	}
+}
