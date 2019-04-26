@@ -1,0 +1,42 @@
+using System;
+
+class prva {
+	static string Answer = null;
+	
+	static void Solve(string[] matrix) {
+		for (int i = 0; i < matrix.Length; ++i) {
+			foreach (var j in matrix[i].Split('#')) {
+				if (j.Length < 2) continue;
+				if (j.CompareTo(Answer) < 0 || Answer == null) {
+					Answer = j;
+				}
+			}
+		}
+	}
+	
+	static string[] Transpose(string[] a) {
+		string[] result = new string[a[0].Length];
+		for (int i = 0; i < result.Length; ++i) {
+			char[] result_part = new char[a.Length];
+			for (int j = 0; j < result_part.Length; ++j) {
+				result_part[j] = a[j][i];
+			}
+			result[i] = new string(result_part);
+		}
+		return result;
+	}
+
+	public static void Main() {
+		var d = Console.ReadLine().Split();
+		var m = int.Parse(d[0]);
+		var n = int.Parse(d[1]);
+		var matrix = new string[m];
+		for (int i = 0; i < m; ++i) {
+			matrix[i] = Console.ReadLine();
+		}
+		Solve(matrix);
+		matrix = Transpose(matrix);
+		Solve(matrix);
+		Console.WriteLine(Answer);
+	}
+}
