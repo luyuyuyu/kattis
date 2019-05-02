@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+
+class oddmanout {
+	public static void Main() {
+		var n = int.Parse(Console.ReadLine());
+		for (int i = 0; i < n; ++i) {
+			var notCouple = new HashSet<string>();
+			var num = int.Parse(Console.ReadLine());
+			var guest = Console.ReadLine().Split();
+			for (int j = 0; j < num; ++j) {
+				if (notCouple.Contains(guest[j])) {
+					notCouple.Remove(guest[j]);
+				}
+				else notCouple.Add(guest[j]);
+			}
+			foreach (string j in notCouple) {
+				Console.WriteLine("Case #{1}: {0}", j, i + 1);
+			}
+		}
+	}
+}
