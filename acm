@@ -1,0 +1,24 @@
+using System;
+
+class acm {
+	public static void Main() {
+		var right = 0;
+		var title = new int[26];
+		var time = 0;
+		while (true) {
+			var input = Console.ReadLine().Split();
+			var perTime = int.Parse(input[0]);
+			if (perTime == -1) break;
+			++title[input[1][0] - 'A'];
+			if (input[2] == "right") {
+				++right;
+				time += perTime;
+				if (title[input[1][0] - 'A'] > 1) {
+					time += 20 * (title[input[1][0] - 'A'] - 1);
+				}
+			}
+		}
+		Console.WriteLine("{0} {1}", right, time);
+	}
+}
+			
