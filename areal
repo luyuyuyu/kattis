@@ -1,0 +1,8 @@
+using System;
+
+class areal {
+	public static void Main() {
+		var area = double.Parse(Console.ReadLine());
+		Console.WriteLine(Math.Sqrt(area) * 4.0);
+	}
+}
