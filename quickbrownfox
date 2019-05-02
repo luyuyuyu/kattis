@@ -1,0 +1,33 @@
+using System;
+
+class quickbrownfox {
+	public static void Main() {
+		var n = int.Parse(Console.ReadLine());
+		for (int i = 0; i < n; ++i) {
+			var input = Console.ReadLine().ToLower();
+			var alphabet = new int[26];
+			for (int j = 0; j < input.Length; ++j) {
+				if (Char.IsLower(input[j])) ++alphabet[input[j] - 'a'];
+			}
+			var result = "missing ";
+			var mulAlphabet = 1;
+			for (int j = 0; j < 26; ++j) {
+				mulAlphabet *= alphabet[j];
+			}
+            if (mulAlphabet != 0) Console.WriteLine("pangram");
+            else {
+				for (int j = 0; j < 26; ++j) {
+					if(alphabet[j] == 0) {
+						result += ((char)(j + 'a')).ToString();
+					}
+				}
+				Console.WriteLine(result);
+			}
+		}
+	}
+}
+			
+				
+		
+	
+		
