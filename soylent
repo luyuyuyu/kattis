@@ -1,0 +1,13 @@
+using System;
+
+class soylent {
+	public static void Main() {
+		var n = int.Parse(Console.ReadLine());
+		for (int i = 0; i < n; ++i) {
+			var requirment = int.Parse(Console.ReadLine());
+			var least = requirment / 400;
+			if (requirment % 400 != 0) least += 1;
+			Console.WriteLine(least);
+		}
+	}
+}
