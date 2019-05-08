@@ -1,0 +1,29 @@
+using System;
+
+class erase {
+	public static string judgeEven (string a, string b) {
+		for (int i = 0; i < a.Length; ++i) {
+				if (a[i] != b[i]) {
+					return "Deletion failed";
+				}
+			}
+		return "Deletion succeeded";
+	}
+	
+	public static string judgeodd (string a, string b) {
+		for (int i = 0; i < a.Length; ++i) {
+				if (a[i] == b[i]) {
+					return "Deletion failed";
+				}
+			}
+		return "Deletion succeeded";
+	}
+	
+	public static void Main() {
+		var times = int.Parse(Console.ReadLine());
+		var line1 = Console.ReadLine();
+		var line2 = Console.ReadLine();
+		if (times % 2 == 0) Console.WriteLine(judgeEven(line1, line2));
+		else Console.WriteLine(judgeodd(line1, line2));
+	}
+}
