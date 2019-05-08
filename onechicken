@@ -1,0 +1,23 @@
+using System;
+
+class onechicken {
+	public static void Main() {
+		var input = Console.ReadLine().Split();
+		var need = int.Parse(input[0]);
+		var have = int.Parse(input[1]);
+		var gap = Math.Abs(need - have);
+		string piece;
+		if (gap == 1) piece = "piece";
+    		else piece = "pieces";
+		if (need < have) {
+			Console.WriteLine(
+			"Dr. Chaz will have {0} {1} of chicken left over!", gap, piece);
+		}
+		else {
+			Console.WriteLine(
+			"Dr. Chaz needs {0} more {1} of chicken!", gap, piece);
+		}
+	}
+}
+			
+
