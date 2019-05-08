@@ -1,0 +1,17 @@
+using System;
+
+class estimatingtheareaofacircle {
+	public static void Main() {	
+		while (true) {
+			var input = Console.ReadLine().Split();
+			if (input[0] == "0") break;
+			var r = double.Parse(input[0]);
+			var denominater = double.Parse(input[1]);
+			var numerator = double.Parse(input[2]);
+			var real = Math.PI * r * r;
+			var square = (2 * r) * (2 * r);
+			var estimate = square * numerator / denominater;
+			Console.WriteLine("{0} {1}", real, estimate);
+		}
+	}
+}
