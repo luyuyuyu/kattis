@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+
+class whatdoesthefoxsay {
+	public static void Main() {	
+		var num = int.Parse(Console.ReadLine());
+		for (int i = 0; i < num; ++i) {
+			var mix = new List<string>();
+			var other = new List<string>();
+			while (true) {
+				var say = Console.ReadLine().Split();
+				if (say[0] == "what") break;
+				if (say[1] != "goes") foreach (string j in say) mix.Add(j);
+				else other.Add(say[2]);
+			}
+			foreach (string k in mix) {
+				if (!other.Exists(x => x == k)) Console.Write("{0} ", k);
+			}
+		}
+	}
+} 
